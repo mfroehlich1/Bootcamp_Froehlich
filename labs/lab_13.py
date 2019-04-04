@@ -1,45 +1,42 @@
-# Index	0	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20	21	22	23	24	25
-# English	a	b	c	d	e	f	g	h	i	j	k	l	m	n	o	p	q	r	s	t	u	v	w	x	y	z
-# ROT+13	n	o	p	q	r	s	t	u	v	w	x	y	z	a	b	c	d	e	f	g	h	i	j	k	l	m
+import string
 
-# message = input("Input your phrase: ")
-#
-# charlist = []
-#
-# for letter in message:
-#     charlist.append(chr(ord(letter) + 13))
-#
-# print(''.join(charlist))
-#
-# def rot13(index):
-#     index = (index + 13) % 26
-#     return index
-#
-#         cipher_message.append(chr(encoded_character))
-#
-#     return ''.join(cipher_message)
-#
-# secret = rot13("testing")
-#
-# print(secret)
 
-message_dict = {}
-cipher_dict = {}
-cipher_list = []
+def rot13(message_input):
+    alphabet_dict = {}
+    punctuation = string.punctuation
+    punctuation_list = []
 
-for i in range(26):
-    message_dict[i] = (chr(i + 97))
-    cipher_dict[i] = (chr((i + 13) % 26 + 97))
+    for item in punctuation:
+        punctuation_list.append(item)
 
-print(message_dict)
-print(cipher_dict)
+    for i in range(26):
+        alphabet_dict[i] = chr(i + 97)
+    cipher_list = []
 
-message = input("Write your phrase: ")
+    for char in message_input:
+        if char != " ":
+            if ord(char) >= 97 and ord(char) <= 122:
+                alphabet_num = (ord(char))
+                cipher_num = ((alphabet_num -97) + 13) % 26
+                cipher_list.append(chr(cipher_num + 97))
+            if ord(char) >= 65 and ord(char) <= 90:
+                alphabet_num = (ord(char))
+                cipher_num = ((alphabet_num - 65) + 13) % 26
+                cipher_list.append(chr(cipher_num + 65))
+        if char == ' ':
+            cipher_list.append(char)
+        for item in punctuation_list:
+            if item == char:
+                cipher_list.append(char)
+        if char.isdigit():
+            cipher_list.append(char)
 
-for char in message:
-    for k, v in message_dict.items():
-        if char == v:
-            for k in cipher_dict:
-                cipher_list.append(cipher_dict[k])
+    cipher_message = ''.join(cipher_list)
+    return cipher_message
 
-print(cipher_list)
+
+message = input("Input your message: ")
+
+encrypted_message = rot13(message)
+
+print(f"\n{encrypted_message}")
