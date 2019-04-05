@@ -3,6 +3,7 @@
 # ones_digit = x%10
 
 teens_dict = {
+    10: "ten",
     11: "eleven",
     12: "twelve",
     13: "thirteen",
@@ -40,7 +41,10 @@ ones_dict = {
 
 user_input = int(input("Using numbers, pick a number between 0-99: "))
 
-if user_input in teens_dict:
+if user_input == 0:
+    print("zero")
+
+elif user_input in teens_dict:
     for key in teens_dict:
         if key == user_input:
             print(teens_dict[key])
