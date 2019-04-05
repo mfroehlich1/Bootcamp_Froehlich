@@ -1,6 +1,3 @@
-# x = 67
-# tens_digit = x//10
-# ones_digit = x%10
 
 teens_dict = {
     10: "ten",
