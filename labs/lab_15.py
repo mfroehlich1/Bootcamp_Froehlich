@@ -55,4 +55,4 @@ else: #  every other number choice should match here
     tens_digit = user_input // 10
     ones_digit = user_input % 10
 
-    print(f"{tens_dict[tens_digit]}{ones_dict[ones_digit]}")
+    print(f"{tens_dict[tens_digit]}-{ones_dict[ones_digit]}")
