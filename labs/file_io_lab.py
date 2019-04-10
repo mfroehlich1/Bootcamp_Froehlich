@@ -35,7 +35,7 @@ def add_phonebook(name, location, number):
 
 def find_name(name):
     fh = open("phonebook.txt", "r")
-    found_name = 'Name not found'
+    found_name = '\nName not found\n'
     for line in fh:
         col_list = ['Name', '- Location', '- Number']
         row_list = line.split()
