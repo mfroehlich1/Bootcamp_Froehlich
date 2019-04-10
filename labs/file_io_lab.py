@@ -27,7 +27,7 @@ def show_phonebook():
 
 def add_phonebook(name, location, number):
     fh = open("phonebook.txt", "a")
-    line = f'{name} {location} {number}'
+    line = f'{name} {location} {number}\n'
     fh.write(line)
     fh.close()
 
