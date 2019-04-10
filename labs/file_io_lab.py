@@ -33,12 +33,26 @@ def add_phonebook(name, location, number):
 
     return 1
 
+def find_name(name):
+    fh = open("phonebook.txt", "r")
+    found_name = 'Name not found'
+    for line in fh:
+        col_list = ['Name', '- Location', '- Number']
+        row_list = line.split()
+        row_dict = dict(zip(col_list, row_list))
+
+        if name in row_dict.values():
+            found_name = f'\n{str(row_dict)}\n'
+            remove_list= ['{', '}', '\'', ',']
+            for item in remove_list:
+                found_name = found_name.replace(item, '')
+    return found_name
 
 while True:
     add_number = ''
     add_location= ''
     add_name = ''
-    print('Would you like to:\n1. (show)\n2. (add)\n3. (quit)')
+    print('Would you like to:\n1. (show)\n2. (add)\n3. (find)\n4. (quit)\n')
     choice = input("Choice: ")
 
     if choice == 'show':
@@ -49,6 +63,10 @@ while True:
         add_number = input('Number: ')
         add_phonebook(add_name, add_location, add_number)
         show_phonebook()
+    elif choice == 'find':
+        name_query = input("Search for name: ")
+        result = find_name(name_query)
+        print(result)
     elif choice == 'quit':
         break
     else:
