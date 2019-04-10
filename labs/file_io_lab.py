@@ -51,3 +51,5 @@ while True:
         show_phonebook()
     elif choice == 'quit':
         break
+    else:
+        print("Choose a valid option!")
