@@ -45,4 +45,3 @@ with open('book.txt', 'r') as book:
 		print(words_list[i])
 
 	a = 1
-
