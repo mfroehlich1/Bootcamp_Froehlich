@@ -48,4 +48,3 @@ with open('rain.txt') as f:
 
     plt.plot(date_list, inch_list)
     plt.show()
-    
