@@ -1,0 +1,59 @@
+/* .page {
+    background: yellow;
+    height: 100%;
+    width: 100%;
+} */
+
+header {
+    display: flex;
+    justify-content: center;
+    background: red;
+    padding-bottom: 1em;
+}
+
+.title {
+    font-size: 4em
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background: black;
+    color: white;
+    font-size: 2em;
+    padding-block-start: 1em;
+    padding-block-end: 1em;
+}
+
+
+section {
+    background: blue;
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background: red;
+    height: auto;
+    width: 200px;
+}
+
+.s_url{
+    align-self: center;
+    margin-top: 3em;
+    font-size: 1em
+}
+
+.post {
+    background: yellow;
+    width: 70%;
+    height: 700px;
+    margin-inline-start: 10%;
+    margin-top: 50px;
+}
+
+footer {
+    background: green;
+}
